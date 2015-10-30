@@ -131,9 +131,16 @@ body {
   width: 100%;
 }
 
+.clothing__images {
+  padding: 0 2%;
+}
+
 .clothing__images__item {
-  width: 100%;
-  padding: 1% 2%;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 2vw;
+  float: left;
 }
 
 
