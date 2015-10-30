@@ -1,0 +1,171 @@
+
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* Border-box all the things */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+svg {
+  width: 100%;
+}
+
+body {
+  margin: 20px 0;
+}
+
+.header {
+}
+
+.header__sturlaAtlas {
+  float: left;
+  width: 50%;
+  padding: 5% 2.5% 5% 5%;
+}
+
+.header__101boys {
+  float: left;
+  width: 50%;
+  padding: 5% 5% 5% 2.5%;
+}
+
+
+.cover {
+  width: 100%;
+  padding: 5%;
+}
+
+.links {
+  text-align: center;
+}
+
+.links__item svg {
+  height: 24px;
+  width: auto;
+  margin: 8px 0;
+  transition: transform 0.2s;
+}
+.links__item:hover svg {
+  -webkit-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+
+
+@media only screen and (min-width: 740px) and (min-height: 360px) {
+  .header {
+    width: calc(100% - 100vh);
+    max-width: 50%;
+    min-width: 320px;
+    margin-top: 10vh;
+    text-align: center;
+  }
+
+  .header__sturlaAtlas {
+    float: none;
+    width: 40%;
+    margin: 0 10%;
+    padding: 0 0 5vh;
+  }
+
+  .header__101boys {
+    padding: 0;
+    width: 38%;
+    margin: 0 10%;
+    float: none;
+  }
+
+
+  .cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vh;
+    min-width: 50%;
+    max-width: calc(100% - 320px);
+    padding: 0;
+  }
+
+  .links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 100vh);
+    max-width: 50%;
+    min-width: 320px;
+    bottom: 10vh;
+  }
+}
