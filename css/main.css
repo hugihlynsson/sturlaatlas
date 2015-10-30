@@ -124,6 +124,18 @@ body {
 }
 
 
+/* Clothing */
+.homeLink {
+  display: block;
+  padding: 5% 10%;
+  width: 100%;
+}
+
+.clothing__images__item {
+  width: 100%;
+  padding: 1% 2%;
+}
+
 
 @media only screen and (min-width: 740px) and (min-height: 360px) {
   .header {
