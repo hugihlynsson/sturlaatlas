@@ -112,6 +112,7 @@ body {
   top: 0;
   left: 0;
   opacity: 0;
+  -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
 .cover__image--info:hover {
@@ -131,7 +132,10 @@ body {
   height: 24px;
   width: auto;
   margin: 8px 0;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 .links__item:hover svg {
   -webkit-transform: skewX(-20deg);

@@ -1,0 +1,24 @@
+{
+  "name": "sturlaatlas",
+  "version": "1.0.0",
+  "description": "Official web for Sturla Atlas",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "postcss -u autoprefixer -o css/main.css css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugihlynsson/sturlaatlas.git"
+  },
+  "author": "Hugi Hlynsson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hugihlynsson/sturlaatlas/issues"
+  },
+  "homepage": "https://github.com/hugihlynsson/sturlaatlas#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.1.0",
+    "postcss-cli": "^2.3.2"
+  }
+}
