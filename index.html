@@ -21,7 +21,7 @@
   </head>
 
   <body>
-    <header class="header">
+    <header class="header clearfix">
       <svg class="header__sturlaAtlas" viewBox="0 0 1500 407" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g transform="translate(-74.000000, -191.000000)" fill="#000000">
           <g transform="translate(74.000000, 191.000000)">
@@ -53,9 +53,12 @@
 
     </header>
 
-    <img class="cover" src="img/cover.jpg" alt="Sturla Atlas – These Days (EP)">
+    <div class="cover clearfix">
+      <img class="cover__image" src="img/cover.jpg" alt="Sturla Atlas – These Days (EP)">
+      <img class="cover__image cover__image--info" src="img/info.jpg" alt="Sturla Atlas – These Days (EP) Info">
+    </div>
 
-    <ul class="links">
+    <ul class="links clearfix">
       <li>
         <a class="links__item" href="https://open.spotify.com/artist/7yuLFZmY5CuPf81al33Ot2" target="_blank">
           <svg viewBox="0 0 81 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

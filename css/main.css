@@ -103,8 +103,24 @@ body {
 
 
 .cover {
+  position: relative;
+  width: 90%;
+  margin: 5%;
+}
+.cover__image--info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.cover__image--info:hover {
+  opacity: 1;
+}
+
+.cover__image {
   width: 100%;
-  padding: 5%;
+  height: auto;
 }
 
 .links {
@@ -178,7 +194,7 @@ body {
     width: 100vh;
     min-width: 50%;
     max-width: calc(100% - 320px);
-    padding: 0;
+    margin: 0;
   }
 
   .links {
