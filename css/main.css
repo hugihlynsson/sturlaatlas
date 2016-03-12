@@ -137,6 +137,9 @@ body {
   transition: transform 0.2s;
   transition: transform 0.2s, -webkit-transform 0.2s;
 }
+.links__item--aqua svg {
+  height: 27px;
+}
 .links__item:hover svg {
   -webkit-transform: skewX(-20deg);
   -ms-transform: skewX(-20deg);
@@ -150,6 +153,42 @@ body {
   width: 100%;
 }
 
+
+
+/* Image Collection */
+.image-collection {
+  max-width: calc(1480px + 4%);
+  padding: 0 2%;
+  margin: 0 auto;
+}
+
+.image-collection__image {
+  padding-bottom: 2%;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 700px) {
+  .image-collection__portraits {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .image-collection__image--portrait {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 49%;
+        -ms-flex: 0 0 49%;
+            flex: 0 0 49%;
+    width: 49%;
+    height: auto;
+  }
+}
 
 
 /* Clothing */
