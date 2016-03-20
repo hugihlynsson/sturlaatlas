@@ -165,18 +165,29 @@
         </div>
 
       </div>
+
+      <audio class="player__audio">
+      </audio>
     </div>
 
     <script>
       var player = document.getElementsByClassName('player__box')[0];
+      var audio = document.getElementsByClassName('player__audio')[0];
+      var source;
       var isPlayerExpanded = false;
 
       var togglePlayerExpand = function() {
         isPlayerExpanded = !isPlayerExpanded;
         if (isPlayerExpanded) {
+          source = document.createElement('source');
+          source.src = '/sounds/love-hurts/01 Roll Up.mp3';
+          audio.appendChild(source)
+          audio.play();
           player.classList.add('player__box--expanded');
         } else {
           player.classList.remove('player__box--expanded');
+          audio.pause();
+          audio.removeChild(source);
         }
       };
 
