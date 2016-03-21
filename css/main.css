@@ -85,6 +85,9 @@ svg {
 body {
   margin: 0;
   font-family: caption, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .header {
@@ -363,6 +366,11 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 90px;
+  width: 180px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 180px;
+      -ms-flex: 0 0 180px;
+          flex: 0 0 180px;
   padding: 10px;
   -webkit-transition: margin 0.2s;
   transition: margin 0.2s;
@@ -378,6 +386,7 @@ body {
 
 .player__texts__title {
   font-size: 20px;
+  line-height: 0.9;
 }
 
 .player__texts__album {
@@ -392,7 +401,7 @@ body {
   width: 14px;
 }
 
-.player__texts__album__counts {
+.player__texts__track__index {
   font-weight: normal;
 }
 
@@ -448,10 +457,19 @@ body {
   width: 90px;
   overflow: hidden;
   -webkit-transition: width 0.2s;
-  transition: width 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 90px;
+      -ms-flex: 0 0 90px;
+          flex: 0 0 90px;
 }
 .player__box--expanded .player__controls {
   width: 160px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 160px;
+      -ms-flex: 0 0 160px;
+          flex: 0 0 160px;
 }
 
 .player__controls__background {
