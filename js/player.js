@@ -29,12 +29,22 @@ var togglePlayerExpand = function() {
   if (isPlayerExpanded) {
     setSongMetadata(currentTrackIndex);
 
-    getTrackElement(currentTrackIndex).play();
+    playTrack(currentTrackIndex);
     playerBoxDiv.classList.add('player__box--expanded');
   } else {
     playerBoxDiv.classList.remove('player__box--expanded');
-    getTrackElement(currentTrackIndex).pause();
+    pauseTrack(currentTrackIndex);
   }
+};
+
+var playTrack = function(index) {
+  getTrackElement(index).play();
+  getTrackElement(index).addEventListener('ended', nextTrack);
+};
+
+var pauseTrack = function(index) {
+  getTrackElement(index).pause();
+  getTrackElement(index).removeEventListener('ended', nextTrack);
 };
 
 var previousTrack = function() {
@@ -50,13 +60,13 @@ var previousTrack = function() {
     }
 
     setSongMetadata(currentTrackIndex);
-    getTrackElement(currentTrackIndex).play();
+    playTrack(currentTrackIndex);
   }
 
 };
 
 var nextTrack = function() {
-  getTrackElement(currentTrackIndex).pause();
+  pauseTrack(currentTrackIndex);
   getTrackElement(currentTrackIndex).currentTime = 0;
 
   currentTrackIndex += 1;
@@ -65,7 +75,7 @@ var nextTrack = function() {
   }
 
   setSongMetadata(currentTrackIndex);
-  getTrackElement(currentTrackIndex).play();
+  playTrack(currentTrackIndex);
 };
 
 
