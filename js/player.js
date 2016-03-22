@@ -2,6 +2,15 @@
 var tracks = [
   'Roll Up',
   'Houses In The Hills',
+  'Lotta Girls',
+  'Pills',
+  'Stay High Interlude',
+  'Good Good',
+  'Over Here',
+  'Feel Your Heart',
+  'FourFortyFive',
+  'San Francisco',
+  'Kiernan Outro',
 ];
 
 var playerBoxDiv = document.getElementsByClassName('player__box')[0];
