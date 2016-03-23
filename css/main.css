@@ -347,7 +347,7 @@ body {
   transition: width 0.2s;
 }
 .player__box--expanded {
-  width: 340px;
+  width: 100%;
 }
 
 
@@ -366,12 +366,12 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 90px;
-  width: 180px;
+  width: calc(92vw - 140px);
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 180px;
-      -ms-flex: 0 0 180px;
-          flex: 0 0 180px;
-  padding: 10px;
+  -webkit-flex: 0 0 calc(92vw - 140px);
+      -ms-flex: 0 0 calc(92vw - 140px);
+          flex: 0 0 calc(92vw - 140px);
+  padding: 10px 6px 10px 10px;
   -webkit-transition: margin 0.2s;
   transition: margin 0.2s;
 }
@@ -414,10 +414,10 @@ body {
   height: 90px;
   background:
     -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('/img/player-cover.jpg');
+    url('/img/player-cover.jpg') center;
   background:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('/img/player-cover.jpg');
+    url('/img/player-cover.jpg') center;
   background-size: cover;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -425,7 +425,7 @@ body {
 }
 .player__box--expanded .player__cover {
   left: 40px;
-  width: 80px;
+  width: 60px;
   border-radius: 0;
 }
 
@@ -465,11 +465,11 @@ body {
           flex: 0 0 90px;
 }
 .player__box--expanded .player__controls {
-  width: 160px;
+  width: 140px;
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 160px;
-      -ms-flex: 0 0 160px;
-          flex: 0 0 160px;
+  -webkit-flex: 0 0 140px;
+      -ms-flex: 0 0 140px;
+          flex: 0 0 140px;
 }
 
 .player__controls__background {
@@ -490,4 +490,37 @@ body {
 }
 .player__controls__action--next {
   right: 0;
+}
+
+@media screen and (min-width: 360px) {
+  .player__box--expanded .player__cover {
+    width: 80px;
+  }
+  .player__box--expanded .player__controls {
+    width: 160px;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 160px;
+        -ms-flex: 0 0 160px;
+            flex: 0 0 160px;
+  }
+  .player__texts {
+    width: calc(92vw - 160px);
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 calc(92vw - 160px);
+        -ms-flex: 0 0 calc(92vw - 160px);
+            flex: 0 0 calc(92vw - 160px);
+  }
+}
+
+@media screen and (min-width: 460px) {
+  .player__box--expanded {
+    width: 370px;
+  }
+  .player__texts {
+      width: 210px;
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 210px;
+          -ms-flex: 0 0 210px;
+              flex: 0 0 210px;
+  }
 }
