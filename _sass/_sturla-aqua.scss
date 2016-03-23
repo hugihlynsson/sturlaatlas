@@ -1,0 +1,32 @@
+
+
+/* Sturla Aqua */
+.sturla-aqua__logo-top {
+  position: fixed;
+  top: 4vw;
+  left: 50%;
+  width: 60vmin;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  max-width: 1000px;
+  height: auto;
+}
+
+.sturla-aqua__logo-bottom-left {
+  position: fixed;
+  bottom: 4vw;
+  left: 4%;
+  height: 6vmin;
+  max-height: 100px;
+  width: auto;
+}
+
+.sturla-aqua__logo-bottom-right {
+  position: fixed;
+  bottom: 4vw;
+  right: 4%;
+  height: 6vmin;
+  max-height: 100px;
+  width: auto;
+}
