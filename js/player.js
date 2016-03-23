@@ -13,11 +13,6 @@ var tracks = [
   'Kiernan Outro',
 ];
 
-var playerBoxDiv = document.getElementsByClassName('player__box')[0];
-var albumCoverDiv = document.getElementsByClassName('player__cover')[0];
-var nextButtonDiv = document.getElementsByClassName('player__controls__action--next')[0];
-var prevButtonDiv = document.getElementsByClassName('player__controls__action--prev')[0];
-
 var currentTrackIndex = 0;
 var isPlayerExpanded = false;
 
@@ -26,7 +21,7 @@ var getTrackElement = function(index) {
   return document.getElementsByClassName('player__audio' + index)[0];;
 };
 
-var setSongMetadata = function(index) {
+var setTrackMetadata = function(index) {
   var trackTitleDiv = document.getElementsByClassName('player__texts__title')[0];
   var trackIndexSpan = document.getElementsByClassName('player__texts__track__index')[0];
   trackTitleDiv.innerHTML = tracks[index];
@@ -34,9 +29,10 @@ var setSongMetadata = function(index) {
 };
 
 var togglePlayerExpand = function() {
+  var playerBoxDiv = document.getElementsByClassName('player__box')[0];
   isPlayerExpanded = !isPlayerExpanded;
   if (isPlayerExpanded) {
-    setSongMetadata(currentTrackIndex);
+    setTrackMetadata(currentTrackIndex);
 
     playTrack(currentTrackIndex);
     playerBoxDiv.classList.add('player__box--expanded');
@@ -58,17 +54,17 @@ var pauseTrack = function(index) {
 
 var previousTrack = function() {
   if (getTrackElement(currentTrackIndex).currentTime > 2) {
-    // If the song has advanced more than 2 seconds, we just want to start at the beginning of that song
+    // If the track has advanced more than 2 seconds, we just want to start at the beginning of that track
     getTrackElement(currentTrackIndex).currentTime = 0;
   } else {
-    // Actually go to the previous song
+    // Actually go to the previous track
     getTrackElement(currentTrackIndex).pause();
     currentTrackIndex -= 1;
     if (currentTrackIndex < 0) {
       currentTrackIndex = tracks.length - 1;
     }
 
-    setSongMetadata(currentTrackIndex);
+    setTrackMetadata(currentTrackIndex);
     playTrack(currentTrackIndex);
   }
 
@@ -83,10 +79,14 @@ var nextTrack = function() {
     currentTrackIndex = 0;
   }
 
-  setSongMetadata(currentTrackIndex);
+  setTrackMetadata(currentTrackIndex);
   playTrack(currentTrackIndex);
 };
 
+
+var albumCoverDiv = document.getElementsByClassName('player__cover')[0];
+var prevButtonDiv = document.getElementsByClassName('player__controls__action--prev')[0];
+var nextButtonDiv = document.getElementsByClassName('player__controls__action--next')[0];
 
 albumCoverDiv.onclick = togglePlayerExpand;
 prevButtonDiv.onclick = previousTrack;
