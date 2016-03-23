@@ -1,0 +1,25 @@
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.title }}{% endif %}">
+
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:site_name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:url" content="{{ site.baseurl }}{{ site.url }}">
+  <meta property="og:image" content="https://hugihlynsson.github.io/sturlaatlas/img/share.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@sturlaatlas">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:image" content="https://hugihlynsson.github.io/sturlaatlas/img/share.jpg">
+
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="icon" sizes="32x32" href="img/favicon.png">
+
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+</head>
