@@ -9,6 +9,55 @@
       {{ content }}
     </main>
 
+    <script src="js/jquery-2.2.2.min.js"></script>
+    <script>
+      (function() {
+        var siteURL = "http://" + top.location.host.toString();
+        var initialUrl = window.location.href;
+        var internalLinksQuery = "a[href^='"+siteURL+"'], a[href^='/'], a[href^='./'], a[href^='../'], a[href^='#']";
+
+        var axaxInternalLinks = function(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          const url = $(this).attr("href");
+          $.get(url, function(data) {
+            $('main').replaceWith($(data).filter('main'));
+            $(internalLinksQuery).on('click', axaxInternalLinks);
+            var state = {
+              url: url,
+            };
+            window.history.pushState(state, null, url);
+            window.scrollTo(0,0);
+          })
+        };
+
+        window.onpopstate = function (event) {
+          console.log('popping', history.state);
+          var state = history && history.state || {};
+          var url = state.url ? state.url : initialUrl;
+          // Update the contents of the page with whatever url was stored in the state.
+          $.get(url, function(data) {
+            $('main').replaceWith($(data).filter('main'));
+            window.scrollTo(0,0);
+            $(internalLinksQuery).on('click', axaxInternalLinks);
+          });
+        };
+
+        // $(window).bind('popstate', function(event) {
+        //   console.log('popping', event.state, event.state && event.state.url)
+        //   var url = event.state && event.state.url ? event.state.url : initialUrl;
+        //   // Update the contents of the page with whatever url was stored in the state.
+        //   $.get(url, function(data) {
+        //     $('main').replaceWith($(data).filter('main'));
+        //     window.scrollTo(0,0);
+        //     $(internalLinksQuery).on('click', axaxInternalLinks);
+        //   });
+        // });
+
+        $(internalLinksQuery).on('click', axaxInternalLinks);
+      })();
+    </script>
+
     {% include player.html %}
 
     <script>
