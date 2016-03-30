@@ -23,8 +23,8 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 90px;
-  width: 90px;
+  height: 80px;
+  width: 80px;
   pointer-events: auto;
   border-radius: 4px;
   overflow: hidden;
@@ -52,7 +52,7 @@
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 90px;
+  height: 100%;
   width: calc(92vw - 140px);
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 calc(92vw - 140px);
@@ -72,8 +72,8 @@
 }
 
 .player__texts__title {
-  font-size: 20px;
-  line-height: 0.9;
+  font-size: 18px;
+  line-height: 0.8;
 }
 
 .player__texts__album {
@@ -97,8 +97,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 100%;
   background:
     -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('/img/player-cover.jpg') center;
@@ -118,13 +118,11 @@
 
 .player__cover__action {
   position: absolute;
-  top: 25px;
+  top: 50%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
   width: 40px;
   height: 40px;
+  margin: -20px;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
@@ -132,7 +130,7 @@
   opacity: 0;
   width: 30px;
   height: 30px;
-  top: 30px;
+  margin: -15px;
 }
 .player__box--expanded .player__cover__action--pause { opacity: 1; }
 .player__box--expanded .player__cover__action--play { opacity: 0; }
@@ -140,16 +138,27 @@
 
 .player__controls {
   position: relative;
-  height: 90px;
-  width: 90px;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   -webkit-transition: width 0.2s;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   -webkit-box-flex: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-flex: 0 0 90px;
       -ms-flex: 0 0 90px;
           flex: 0 0 90px;
+  background: url('/img/player-cover-blur.jpg');
 }
 .player__box--expanded .player__controls {
   width: 140px;
@@ -159,30 +168,17 @@
           flex: 0 0 140px;
 }
 
-.player__controls__background {
-  width: 100%;
-  height: 100%;
-  background: url('/img/player-cover-blur.jpg');
-}
-
 .player__controls__action {
-  position: absolute;
   height: 34px;
   width: 40px;
-  top: 28px;
   padding: 10px;
-}
-.player__controls__action--prev {
-  left: 0;
-}
-.player__controls__action--next {
-  right: 0;
 }
 
 @media screen and (min-width: 360px) {
   .player__box--expanded .player__cover {
     width: 80px;
   }
+
   .player__box--expanded .player__controls {
     width: 160px;
     -webkit-box-flex: 0;
@@ -190,24 +186,54 @@
         -ms-flex: 0 0 160px;
             flex: 0 0 160px;
   }
+
   .player__texts {
     width: calc(92vw - 160px);
+    width: 210px;
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 calc(92vw - 160px);
-        -ms-flex: 0 0 calc(92vw - 160px);
-            flex: 0 0 calc(92vw - 160px);
+      -webkit-flex: 0 0 calc(92vw - 160px);
+          -ms-flex: 0 0 calc(92vw - 160px);
+              flex: 0 0 calc(92vw - 160px);
   }
 }
 
 @media screen and (min-width: 460px) {
-  .player__box--expanded {
-    width: 370px;
+  .player__box {
+    width: 90px;
+    height: 90px;
   }
+  .player__box--expanded {
+    width: 380px;
+  }
+
   .player__texts {
-      width: 210px;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 210px;
-          -ms-flex: 0 0 210px;
-              flex: 0 0 210px;
+    width: 210px;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 210px;
+        -ms-flex: 0 0 210px;
+            flex: 0 0 210px;
+  }
+
+  .player__texts__title {
+    font-size: 20px;
+    line-height: 0.9;
+  }
+
+  .player__cover {
+    width: 90px;
+  }
+  .player__box--expanded .player__cover {
+    width: 90px;
+  }
+
+  .player__controls {
+    width: 90px;
+  }
+  .player__box--expanded .player__controls {
+    width: 170px;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 170px;
+        -ms-flex: 0 0 170px;
+            flex: 0 0 170px;
   }
 }
