@@ -102,6 +102,6 @@
     width: calc(100% - 100vh);
     max-width: 50%;
     min-width: 320px;
-    bottom: 10vh;
+    bottom: calc(5vw + 90px); // Make space for player
   }
 }
