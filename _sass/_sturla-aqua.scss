@@ -13,20 +13,18 @@
   height: auto;
 }
 
-.sturla-aqua__logo-bottom-left {
+
+.sturla-aqua__logo-bottom-right {
+  display: none;
   position: fixed;
-  bottom: 4vw;
-  left: 4%;
-  height: 6vmin;
-  max-height: 100px;
+  bottom: calc(4vw + 10px);
+  right: 4%;
+  height: 50px;
   width: auto;
 }
 
-.sturla-aqua__logo-bottom-right {
-  position: fixed;
-  bottom: 4vw;
-  right: 4%;
-  height: 6vmin;
-  max-height: 100px;
-  width: auto;
+@media screen and (min-width: 700px) {
+  .sturla-aqua__logo-bottom-right {
+    display: block;
+  }
 }
