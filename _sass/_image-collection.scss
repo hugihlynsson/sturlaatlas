@@ -2,16 +2,16 @@
 
 /* Image Collection */
 .image-collection {
-  max-width: calc(1480px + 4%);
-  padding: 2% 2% 0 2%;
+  padding: 2vw 2vw 0 2vw;
   margin: 0 auto;
 }
 
 .image-collection__image {
-  padding-bottom: 2%;
+  padding-bottom: 2vw;
   width: 100%;
   height: auto;
 }
+
 
 @media screen and (min-width: 700px) {
   .image-collection__portraits {
@@ -36,5 +36,13 @@
             flex: 0 0 49%;
     width: 49%;
     height: auto;
+  }
+}
+
+
+@media screen and (min-width: 1538px) {
+  .image-collection {
+    width: 1538px;
+    padding: 29px /* 2% */
   }
 }
