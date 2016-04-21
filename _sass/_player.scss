@@ -31,7 +31,10 @@
   background: #FFF;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   -webkit-transition: width 0.2s;
-  transition: width 0.2s;
+  transition: width 0.2s, box-shadow 0.2s;
+}
+.player__box:not(.player__box--expanded):hover {
+  box-shadow: 0 3px 30px rgba(0, 0, 0, 0.5);
 }
 .player__box--expanded {
   width: 100%;
