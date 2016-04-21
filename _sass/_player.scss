@@ -109,6 +109,7 @@
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   border-radius: 4px;
+  cursor: pointer;
 }
 .player__box--expanded .player__cover {
   left: 40px;
@@ -169,9 +170,10 @@
 }
 
 .player__controls__action {
-  height: 34px;
+  height: 100%;
   width: 40px;
   padding: 10px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 360px) {
