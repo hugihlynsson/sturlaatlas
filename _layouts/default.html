@@ -45,17 +45,6 @@
           });
         };
 
-        // $(window).bind('popstate', function(event) {
-        //   console.log('popping', event.state, event.state && event.state.url)
-        //   var url = event.state && event.state.url ? event.state.url : initialUrl;
-        //   // Update the contents of the page with whatever url was stored in the state.
-        //   $.get(url, function(data) {
-        //     $('main').replaceWith($(data).filter('main'));
-        //     window.scrollTo(0,0);
-        //     $(internalLinksQuery).on('click', ajaxInternalLinks);
-        //   });
-        // });
-
         $(internalLinksQuery).on('click', ajaxInternalLinks);
       })();
     </script>
@@ -76,7 +65,7 @@
         }
       }
     </script>
-    
+
   </body>
 
 </html>
