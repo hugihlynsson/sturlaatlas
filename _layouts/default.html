@@ -68,6 +68,13 @@
 
       ga('create', 'UA-69494002-1', 'auto');
       ga('send', 'pageview');
+
+      const downloadLink = document.getElementById('download-season2');
+      if (downloadLink) {
+        downloadLink.onclick = function() {
+          ga('send', 'event', 'download', 'click', 'Season 2');
+        }
+      }
     </script>
     
   </body>
