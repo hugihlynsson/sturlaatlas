@@ -17,9 +17,13 @@
         var internalLinksQuery = "a[href^='"+siteURL+"'], a[href^='/'], a[href^='./'], a[href^='../'], a[href^='#']";
 
         var ajaxInternalLinks = function(event) {
+          if (typeof $(this).attr('download') === 'string') {
+            // Don't try to ajax downloadable links
+            return;
+          }
           event.preventDefault();
           event.stopPropagation();
-          const url = $(this).attr("href");
+          const url = $(this).attr('href');
           $.get(url, function(data) {
             $('main').replaceWith($(data).filter('main'));
             $(internalLinksQuery).on('click', ajaxInternalLinks);
