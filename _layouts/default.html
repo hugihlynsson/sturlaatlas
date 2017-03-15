@@ -9,48 +9,6 @@
       {{ content }}
     </main>
 
-    <script src="js/jquery-2.2.2.min.js"></script>
-    <script>
-      (function() {
-        var siteURL = "http://" + top.location.host.toString();
-        var initialUrl = window.location.href;
-        var internalLinksQuery = "a[href^='"+siteURL+"'], a[href^='/'], a[href^='./'], a[href^='../'], a[href^='#']";
-
-        var ajaxInternalLinks = function(event) {
-          if (typeof $(this).attr('download') === 'string') {
-            // Don't try to ajax downloadable links
-            return;
-          }
-          event.preventDefault();
-          event.stopPropagation();
-          const url = $(this).attr('href');
-          $.get(url, function(data) {
-            $('main').replaceWith($(data).filter('main'));
-            $(internalLinksQuery).on('click', ajaxInternalLinks);
-            var state = {
-              url: url,
-            };
-            window.history.pushState(state, null, url);
-            window.scrollTo(0,0);
-          })
-        };
-
-        window.onpopstate = function (event) {
-          console.log('popping', history.state);
-          var state = history && history.state || {};
-          var url = state.url ? state.url : initialUrl;
-          // Update the contents of the page with whatever url was stored in the state.
-          $.get(url, function(data) {
-            $('main').replaceWith($(data).filter('main'));
-            window.scrollTo(0,0);
-            $(internalLinksQuery).on('click', ajaxInternalLinks);
-          });
-        };
-
-        $(internalLinksQuery).on('click', ajaxInternalLinks);
-      })();
-    </script>
-
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
